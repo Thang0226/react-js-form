@@ -5,14 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from "./components/Login";
 import LoginFormik from "./components/LoginFormik";
+import ContactForm from "./components/ContactForm";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/*<App />*/}
-    {/*  <Login />*/}
-      <LoginFormik/>
-  </React.StrictMode>
+    <React.StrictMode>
+        {/*<App />*/}
+        {/*  <Login />*/}
+        {/*  <LoginFormik/>*/}
+      <ContactForm/>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

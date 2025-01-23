@@ -1,13 +1,15 @@
 import {useState} from 'react';
 import "../App.css";
 import {Formik} from "formik";
+import {useNavigate} from "react-router-dom";
 
 export default function LoginFormik() {
     const REGEX = {
-        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+$/,
         password: /^[a-zA-Z0-9!@#$%^&*)(+=._-]{6,}$/
     };
     const [form, setForm] = useState({});
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         setForm({
@@ -17,28 +19,35 @@ export default function LoginFormik() {
     }
 
     function handleSubmit() {
-        alert("Login in successfully!!!");
+        alert("Login in successfully!");
+        navigate("/home", {state: {account: form.email}});
     }
 
     function handleValidate() {
         const errors = {};
+
         if (!form.email) {
             errors.email = "Required";
         } else if (!REGEX.email.test(form.email)) {
             errors.email = "Invalid email address";
-            console.log("code");
+        } else if (!(form.email === "admin@gmail.com")) {
+            errors.email = "Wrong email address";
         }
+
         if (!form.password) {
             errors.password = "Required";
         } else if (!REGEX.password.test(form.password)) {
             errors.password = "Invalid password";
+        } else if (!(form.password === "letmein")) {
+            errors.password = "Wrong password";
         }
+
         return errors;
     }
 
     return (
         <div>
-            <h1>Sign up</h1>
+            <h1>Login Form</h1>
             <Formik initialValues={form}
                     validate={handleValidate}
                     onSubmit={handleSubmit}>

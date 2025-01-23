@@ -7,15 +7,22 @@ import Login from "./components/Login";
 import LoginFormik from "./components/LoginFormik";
 import ContactForm from "./components/ContactForm";
 import MailForm from "./components/MailForm";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Home from "./components/Home";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         {/*<App />*/}
         {/*  <Login />*/}
-        {/*  <LoginFormik/>*/}
         {/*<ContactForm/>*/}
-        <MailForm/>
+        {/*<MailForm/>*/}
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<LoginFormik/>} />
+                <Route path="/home" element={<Home/>} />
+            </Routes>
+        </BrowserRouter>
     </React.StrictMode>
 );
 

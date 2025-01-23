@@ -75,3 +75,8 @@ label {
   color: red;
   margin: 0;
 }
+
+.message {
+  color: green;
+  margin: 0;
+}

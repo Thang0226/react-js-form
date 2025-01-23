@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Login from "./components/Login";
 import LoginFormik from "./components/LoginFormik";
 import ContactForm from "./components/ContactForm";
+import MailForm from "./components/MailForm";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,8 @@ root.render(
         {/*<App />*/}
         {/*  <Login />*/}
         {/*  <LoginFormik/>*/}
-      <ContactForm/>
+        {/*<ContactForm/>*/}
+        <MailForm/>
     </React.StrictMode>
 );
 

@@ -20,7 +20,7 @@ export default function LoginFormik() {
 
     function handleSubmit() {
         alert("Login in successfully!");
-        navigate("/home", {state: {account: form.email}});
+        navigate("/employees", {state: {account: form.email}});
     }
 
     function handleValidate() {
